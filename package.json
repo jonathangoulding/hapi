@@ -2,11 +2,11 @@
   "name": "hapi",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.js",
+  "main": "src/index.js",
   "scripts": {
     "dev": "nodemon .",
     "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "lab -v"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,8 @@
     "nunjucks": "3.2.3"
   },
   "devDependencies": {
+    "@hapi/code": "8.0.6",
+    "@hapi/lab": "24.5.1",
     "nodemon": "2.0.15"
   }
 }
