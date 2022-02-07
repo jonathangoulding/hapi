@@ -21,7 +21,9 @@
   "homepage": "https://github.com/jonathangoulding/hapi#readme",
   "dependencies": {
     "@hapi/hapi": "20.2.1",
-    "joi": "17.6.0"
+    "@hapi/vision": "6.1.0",
+    "joi": "17.6.0",
+    "nunjucks": "3.2.3"
   },
   "devDependencies": {
     "nodemon": "2.0.15"

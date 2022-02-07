@@ -3,8 +3,11 @@
 const Hapi = require('@hapi/hapi');
 const { blogPost } = require('./features/blog/blog.router');
 const { getBooks } = require('./features/books/book.router');
+const { home } = require('./features/home/home.router');
+const homeRouter = require('./features/home/home.router');
 const { homepage } = require('./features/homepage/homepage.router');
 const { getDate } = require('./plugins/datePlugin');
+const viewEngine = require('./server/viewEngines');
 
 const init = async () => {
 
@@ -23,6 +26,11 @@ const init = async () => {
     server.route(blogPost)
     server.route(homepage)
     server.route(getBooks)
+    server.route(home)
+
+
+    await server.register(require('@hapi/vision'));
+    server.views(viewEngine);
 
     await server.start();
     console.log('Server running on %s', server.info.uri);
