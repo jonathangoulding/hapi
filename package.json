@@ -1,0 +1,29 @@
+{
+  "name": "hapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon .",
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathangoulding/hapi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonathangoulding/hapi/issues"
+  },
+  "homepage": "https://github.com/jonathangoulding/hapi#readme",
+  "dependencies": {
+    "@hapi/hapi": "20.2.1",
+    "joi": "17.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.15"
+  }
+}
