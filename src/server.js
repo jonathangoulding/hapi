@@ -2,6 +2,7 @@
 
 const Hapi = require('@hapi/hapi');
 const { blogPost } = require('./features/blog/blog.router');
+const { getBooks } = require('./features/books/book.router');
 const { homepage } = require('./features/homepage/homepage.router');
 const { getDate } = require('./plugins/datePlugin');
 
@@ -21,6 +22,7 @@ const init = async () => {
 
     server.route(blogPost)
     server.route(homepage)
+    server.route(getBooks)
 
     await server.start();
     console.log('Server running on %s', server.info.uri);
