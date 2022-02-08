@@ -10,7 +10,7 @@ on:
     branches: [ main ]
 
 jobs:
-  test-unit:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,7 +19,7 @@ jobs:
           node-version: '16'
           cache: 'npm'
       - run: npm ci
-      - run: npm run test
+      - run: npm run test -- --l
       
   coverage:
     runs-on: ubuntu-latest
@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: '16'
       - run: npm ci
-      - run: npm run coverage
+      - run: npm run coverage -- --l
       
   lint:
     runs-on: ubuntu-latest
@@ -54,7 +54,7 @@ jobs:
       
   deploy:
     runs-on: ubuntu-latest
-    needs: [test-unit, coverage, lint, audit]
+    needs: [test, coverage, lint, audit]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
