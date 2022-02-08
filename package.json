@@ -7,6 +7,7 @@
     "dev": "nodemon .",
     "start": "node .",
     "test": "lab -v",
+    "lint": "echo No Lint",
     "coverage": "lab -r html -o reports/coverage.html"
   },
   "repository": {
