@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon .",
     "start": "node .",
-    "test": "lab -v"
+    "test": "lab -v",
+    "coverage": "lab -r html -o reports/coverage.html"
   },
   "repository": {
     "type": "git",

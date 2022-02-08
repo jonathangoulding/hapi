@@ -1,10 +1,10 @@
 "use strict";
 
 const Hapi = require("@hapi/hapi");
-const { blogPost } = require("../features/blog/blog.router");
-const { getBooks } = require("../features/books/book.router");
-const { home } = require("../features/home/home.router");
-const { homepage } = require("../features/homepage/homepage.router");
+const { blogPost } = require("../api/blog/blog.router");
+const { getBooks } = require("../api/books/book.router");
+const { homepage } = require("../api/homepage/homepage.router");
+const { home } = require("../ui/home/home.router");
 const { registerPlugin } = require("./registerPlugins");
 const { registerViewEngine } = require("./regicterViewEngine");
 
@@ -18,10 +18,7 @@ server.route(homepage);
 server.route(getBooks);
 server.route(home);
 
-(async () => {
-  await registerPlugin(server);
-  await registerViewEngine(server);
-})();
+
 
 exports.init = async () => {
   await server.initialize();
@@ -29,6 +26,9 @@ exports.init = async () => {
 };
 
 exports.start = async () => {
+    await registerPlugin(server);
+    await registerViewEngine(server);
+
   await server.start();
   console.log(`Server running at: ${server.info.uri}`);
   return server;
