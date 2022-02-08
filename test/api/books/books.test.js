@@ -19,7 +19,7 @@ describe('/book get', () => {
     it('responds with 200 & result is expected', async () => {
         const res = await server.inject({
             method: 'get',
-            url: '/books'
+            url: '/api/books'
         });
         expect(res.statusCode).to.equal(200);
         expect(res.result).to.equal([ { title: "fella"}])

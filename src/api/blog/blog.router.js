@@ -7,7 +7,7 @@ const { blogPost } = require('./blog.controller')
 module.exports = {
     blogPost: {
         method: 'POST',
-        path: '/blog',
+        path: '/api/blog',
         handler: blogPost,
         options: {
             validate: {

@@ -24,7 +24,7 @@ describe("/blog post", () => {
 
     const res = await server.inject({
       method: "post",
-      url: "/blog",
+      url: "/api/blog",
       payload,
     });
     expect(res.statusCode).to.equal(200);

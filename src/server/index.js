@@ -3,7 +3,7 @@
 const Hapi = require("@hapi/hapi");
 const { blogPost } = require("../api/blog/blog.router");
 const { getBooks } = require("../api/books/book.router");
-const { homepage } = require("../api/homepage/homepage.router");
+const { getTime } = require("../api/time/time.router");
 const { home } = require("../ui/home/home.router");
 const { registerPlugin } = require("./registerPlugins");
 const { registerViewEngine } = require("./regicterViewEngine");
@@ -13,12 +13,8 @@ const server = Hapi.server({
   host: "localhost",
 });
 
-server.route(blogPost);
-server.route(homepage);
-server.route(getBooks);
+server.route([blogPost, getBooks, getTime]);
 server.route(home);
-
-
 
 exports.init = async () => {
   await server.initialize();
