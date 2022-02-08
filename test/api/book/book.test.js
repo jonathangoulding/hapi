@@ -4,7 +4,7 @@ const Lab = require("@hapi/lab");
 const { expect } = require("@hapi/code");
 const { afterEach, beforeEach, describe, it } = (exports.lab = Lab.script());
 const { init } = require("../../../src/server");
-const books = require("../../../src/api/book/books.json");
+const books = require("../../../src/api/book/model/books.json");
 
 describe("books", () => {
   describe("/book get", () => {
