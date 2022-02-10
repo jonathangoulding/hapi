@@ -13,7 +13,7 @@ const getBooks = async (request, h) => {
 
 const getBookById = async (request, h) => {
   const bookId = request.params.id;
-  const foundBook = findBookById(bookId);
+  const foundBook = await findBookById(bookId);
 
   if (foundBook === undefined) {
     throw Boom.badRequest(`Book id: ${bookId} not found`);

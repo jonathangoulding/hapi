@@ -11,8 +11,15 @@ const findBooks = async () => {
   }
 };
 
-const findBookById = (bookId) =>
-  books.find((book) => book.id.toString() === bookId);
+const findBookById = async (bookId) => {
+try {
+  const reponse = await BookStore.forge({id: bookId}).fetch()
+
+  return reponse;
+} catch (error) {
+  console.log(`Failed to find book by id: ${error}`);
+}
+}
 
 const saveBook = async (payload) => {
   try {
