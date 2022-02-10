@@ -26,9 +26,12 @@
     "@hapi/hapi": "20.2.1",
     "@hapi/inert": "6.0.5",
     "@hapi/vision": "6.1.0",
+    "bookshelf": "1.2.0",
     "hapi-swagger": "14.2.4",
     "joi": "17.6.0",
-    "nunjucks": "3.2.3"
+    "knex": "0.21.21",
+    "nunjucks": "3.2.3",
+    "pg": "8.7.3"
   },
   "devDependencies": {
     "@hapi/code": "8.0.6",

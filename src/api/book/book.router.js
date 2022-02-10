@@ -24,7 +24,7 @@ const createBookRoute = {
   options: {
     validate: {
       payload: Joi.object({
-        post: Joi.string().max(140).required(),
+        title: Joi.string().max(140).required(),
         author: Joi.string().required(),
       }),
     },
