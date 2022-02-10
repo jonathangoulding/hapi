@@ -1,8 +1,14 @@
 const Boom = require("@hapi/boom");
-const { findBookById, findBooks } = require("./model/handler");
+const { findBookById, findBooks, saveBook } = require("./model/handler");
 
 const getBooks = async (request, h) => {
-  return findBooks();
+  const books = await findBooks();
+
+  if (!books || books.length === 0) {
+    throw Boom.badRequest(`No books in the Database`);
+  }
+
+  return books;
 };
 
 const getBookById = async (request, h) => {
@@ -15,9 +21,11 @@ const getBookById = async (request, h) => {
   return foundBook;
 };
 
-const createBook = (request, h) => {
+const createBook = async (request, h) => {
+  const newBook = await saveBook(request.payload);
+
   const response = {
-    createdBy: request.payload.author,
+    createdBy: newBook,
   };
   return response;
 };
